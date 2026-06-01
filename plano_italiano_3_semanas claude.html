@@ -1,0 +1,279 @@
+
+<style>
+  :root { --tab-active: var(--color-background-primary); }
+  .pill { display:inline-block; font-size:11px; font-weight:500; padding:2px 8px; border-radius:99px; }
+  .pill-teal { background:var(--color-background-success); color:var(--color-text-success); }
+  .pill-blue { background:var(--color-background-info); color:var(--color-text-info); }
+  .pill-amber { background:var(--color-background-warning); color:var(--color-text-warning); }
+  .week-tab { cursor:pointer; padding:7px 18px; font-size:13px; font-weight:500; border:0.5px solid var(--color-border-tertiary); border-radius:var(--border-radius-md); background:var(--color-background-secondary); color:var(--color-text-secondary); transition:all .15s; }
+  .week-tab.active { background:var(--color-background-primary); color:var(--color-text-primary); border-color:var(--color-border-primary); }
+  .day-card { background:var(--color-background-primary); border:0.5px solid var(--color-border-tertiary); border-radius:var(--border-radius-lg); padding:14px 16px; margin-bottom:10px; display:grid; grid-template-columns:54px 1fr auto; gap:0 14px; align-items:start; }
+  .day-num { font-size:11px; font-weight:500; color:var(--color-text-secondary); text-transform:none; }
+  .day-title { font-size:14px; font-weight:500; color:var(--color-text-primary); margin:0 0 4px; }
+  .day-body { font-size:13px; color:var(--color-text-secondary); margin:0; line-height:1.5; }
+  .tip-box { background:var(--color-background-secondary); border-left:3px solid var(--color-border-info); border-radius:0 var(--border-radius-md) var(--border-radius-md) 0; padding:10px 14px; margin-top:16px; font-size:13px; color:var(--color-text-secondary); }
+  .phrase-row { display:flex; justify-content:space-between; align-items:baseline; padding:6px 0; border-bottom:0.5px solid var(--color-border-tertiary); font-size:13px; }
+  .phrase-it { font-weight:500; color:var(--color-text-primary); }
+  .phrase-pt { color:var(--color-text-secondary); }
+  .section-head { font-size:11px; font-weight:500; color:var(--color-text-tertiary); letter-spacing:.06em; text-transform:uppercase; margin:18px 0 8px; }
+  .prog-bar { height:6px; border-radius:3px; background:var(--color-border-tertiary); margin-top:6px; overflow:hidden; }
+  .prog-fill { height:100%; border-radius:3px; }
+</style>
+
+<h2 class="sr-only">Plano de estudo de italiano — 3 semanas, 15 minutos por dia</h2>
+
+<div style="padding:1rem 0 0;">
+
+  <div style="display:flex; gap:8px; margin-bottom:20px; flex-wrap:wrap;" id="tabs">
+    <button class="week-tab active" onclick="show(0)">Semana 1 — Sobrevivência</button>
+    <button class="week-tab" onclick="show(1)">Semana 2 — Conversação</button>
+    <button class="week-tab" onclick="show(2)">Semana 3 — Fluência de viagem</button>
+    <button class="week-tab" onclick="show(3)">Frases essenciais</button>
+  </div>
+
+  <div id="w0">
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:10px; margin-bottom:18px;">
+      <div style="background:var(--color-background-secondary); border-radius:var(--border-radius-md); padding:12px 14px;">
+        <div style="font-size:11px; color:var(--color-text-secondary); margin-bottom:4px;">Foco da semana</div>
+        <div style="font-size:15px; font-weight:500;">Primeiros contactos</div>
+      </div>
+      <div style="background:var(--color-background-secondary); border-radius:var(--border-radius-md); padding:12px 14px;">
+        <div style="font-size:11px; color:var(--color-text-secondary); margin-bottom:4px;">Vocabulário</div>
+        <div style="font-size:15px; font-weight:500;">~60 palavras</div>
+      </div>
+      <div style="background:var(--color-background-secondary); border-radius:var(--border-radius-md); padding:12px 14px;">
+        <div style="font-size:11px; color:var(--color-text-secondary); margin-bottom:4px;">Tempo diário</div>
+        <div style="font-size:15px; font-weight:500;">15 min</div>
+      </div>
+    </div>
+
+    <div class="day-card">
+      <div><div class="day-num">Dia 1</div></div>
+      <div>
+        <p class="day-title">Saudações e pronúncia básica</p>
+        <p class="day-body">Aprende: Ciao, Buongiorno, Buonasera, Arrivederci, Per favore, Grazie, Prego. Pratica a pronúncia italiana (o "gl" em "meglio", o "ch" que soa a K). <span class="pill pill-teal">5 min teoria</span> <span class="pill pill-blue">10 min repetição oral</span></p>
+      </div>
+    </div>
+    <div class="day-card">
+      <div><div class="day-num">Dia 2</div></div>
+      <div>
+        <p class="day-title">Apresentações pessoais</p>
+        <p class="day-body">Mi chiamo…, Sono di Portogallo, Quanti anni hai?, Ho ___ anni. Treina a dizer frases completas em voz alta.</p>
+      </div>
+    </div>
+    <div class="day-card">
+      <div><div class="day-num">Dia 3</div></div>
+      <div>
+        <p class="day-title">Números 1–20 e preços</p>
+        <p class="day-body">Uno, due, tre… até venti. Como perguntar o preço: Quanto costa? Faz flashcards mentais com objetos ao teu redor.</p>
+      </div>
+    </div>
+    <div class="day-card">
+      <div><div class="day-num">Dia 4</div></div>
+      <div>
+        <p class="day-title">No café — pedir comida e bebidas</p>
+        <p class="day-body">Un caffè, un cappuccino, per favore. Vorrei…, Avete…?, Il conto, per favore. Simula um pedido de encomenda em voz alta.</p>
+      </div>
+    </div>
+    <div class="day-card">
+      <div><div class="day-num">Dia 5</div></div>
+      <div>
+        <p class="day-title">Direções básicas</p>
+        <p class="day-body">Dov'è…?, A destra, a sinistra, sempre dritto, vicino, lontano. Pratica descrevendo o caminho de casa para o trabalho em italiano.</p>
+      </div>
+    </div>
+    <div class="day-card">
+      <div><div class="day-num">Dia 6</div></div>
+      <div>
+        <p class="day-title">Revisão + números 20–100</p>
+        <p class="day-body">Consolida os dias anteriores. Adiciona venti, trenta, quaranta… cento. Exercício: diz os preços de produtos imaginários.</p>
+      </div>
+    </div>
+    <div class="day-card">
+      <div><div class="day-num">Dia 7</div></div>
+      <div>
+        <p class="day-title">Mini-diálogo de simulação</p>
+        <p class="day-body">Pratica um diálogo completo: entras num café, cumprimentas, pedes, perguntas o preço, pagas, despedes-te. Grava-te para ouvir depois.</p>
+      </div>
+    </div>
+    <div class="tip-box"><i class="ti ti-bulb" aria-hidden="true" style="margin-right:6px;"></i><strong>Dica da semana:</strong> O italiano tem pronúncia regular — uma vez que aprendes as regras, consegues ler qualquer palavra. Foca-te em repetir em voz alta, não só a ler.</div>
+  </div>
+
+  <div id="w1" style="display:none">
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:10px; margin-bottom:18px;">
+      <div style="background:var(--color-background-secondary); border-radius:var(--border-radius-md); padding:12px 14px;">
+        <div style="font-size:11px; color:var(--color-text-secondary); margin-bottom:4px;">Foco da semana</div>
+        <div style="font-size:15px; font-weight:500;">Situações reais</div>
+      </div>
+      <div style="background:var(--color-background-secondary); border-radius:var(--border-radius-md); padding:12px 14px;">
+        <div style="font-size:11px; color:var(--color-text-secondary); margin-bottom:4px;">Vocabulário total</div>
+        <div style="font-size:15px; font-weight:500;">~150 palavras</div>
+      </div>
+      <div style="background:var(--color-background-secondary); border-radius:var(--border-radius-md); padding:12px 14px;">
+        <div style="font-size:11px; color:var(--color-text-secondary); margin-bottom:4px;">Progresso</div>
+        <div style="font-size:15px; font-weight:500;">Semana 2/3</div>
+      </div>
+    </div>
+
+    <div class="day-card">
+      <div><div class="day-num">Dia 8</div></div>
+      <div>
+        <p class="day-title">No restaurante</p>
+        <p class="day-body">Un tavolo per due, Cosa mi consiglia?, Sono allergico/a a…, Il menù, per favore. Aprende os nomes dos pratos italianos mais comuns.</p>
+      </div>
+    </div>
+    <div class="day-card">
+      <div><div class="day-num">Dia 9</div></div>
+      <div>
+        <p class="day-title">Transporte e viagens</p>
+        <p class="day-body">Un biglietto per…, A che ora parte il treno?, Dov'è la fermata?, L'aeroporto, la stazione. Pratica frases para comprar bilhetes.</p>
+      </div>
+    </div>
+    <div class="day-card">
+      <div><div class="day-num">Dia 10</div></div>
+      <div>
+        <p class="day-title">No hotel</p>
+        <p class="day-body">Ho una prenotazione, Una camera singola/doppia, A che ora è il check-in?, C'è il Wi-Fi?, Può chiamarmi un taxi?</p>
+      </div>
+    </div>
+    <div class="day-card">
+      <div><div class="day-num">Dia 11</div></div>
+      <div>
+        <p class="day-title">Fazer compras</p>
+        <p class="day-body">Quanto costa questo?, Posso provarlo?, Ce l'ha in un'altra misura?, Accettate carte di credito?, Mi fa lo sconto? Pratica num cenário de mercado.</p>
+      </div>
+    </div>
+    <div class="day-card">
+      <div><div class="day-num">Dia 12</div></div>
+      <div>
+        <p class="day-title">Urgências e saúde</p>
+        <p class="day-body">Ho bisogno di aiuto!, Chiamate un medico!, Mi fa male…, Dov'è la farmacia?, Sono perso/a. Frases críticas — memoriza-as bem.</p>
+      </div>
+    </div>
+    <div class="day-card">
+      <div><div class="day-num">Dia 13</div></div>
+      <div>
+        <p class="day-title">Visitas culturais e turismo</p>
+        <p class="day-body">Dov'è il museo?, A che ora apre/chiude?, Un biglietto intero/ridotto, È permesso fotografare?, Che bello! Aprende a expressar admiração.</p>
+      </div>
+    </div>
+    <div class="day-card">
+      <div><div class="day-num">Dia 14</div></div>
+      <div>
+        <p class="day-title">Revisão e role-play temático</p>
+        <p class="day-body">Escolhe um cenário (restaurante, hotel ou museu) e encena toda a interação de início ao fim. Tenta não pausar — flui mesmo com erros.</p>
+      </div>
+    </div>
+    <div class="tip-box"><i class="ti ti-headphones" aria-hidden="true" style="margin-right:6px;"></i><strong>Dica da semana:</strong> Ouve podcasts de italiano para principiantes (ex: ItalianPod101, Italiano In 3 Minuti no YouTube) durante deslocações — mesmo sem olhar para o ecrã.</div>
+  </div>
+
+  <div id="w2" style="display:none">
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:10px; margin-bottom:18px;">
+      <div style="background:var(--color-background-secondary); border-radius:var(--border-radius-md); padding:12px 14px;">
+        <div style="font-size:11px; color:var(--color-text-secondary); margin-bottom:4px;">Foco da semana</div>
+        <div style="font-size:15px; font-weight:500;">Confiança real</div>
+      </div>
+      <div style="background:var(--color-background-secondary); border-radius:var(--border-radius-md); padding:12px 14px;">
+        <div style="font-size:11px; color:var(--color-text-secondary); margin-bottom:4px;">Vocabulário total</div>
+        <div style="font-size:15px; font-weight:500;">~250 palavras</div>
+      </div>
+      <div style="background:var(--color-background-secondary); border-radius:var(--border-radius-md); padding:12px 14px;">
+        <div style="font-size:11px; color:var(--color-text-secondary); margin-bottom:4px;">Progresso</div>
+        <div style="font-size:15px; font-weight:500;">Semana 3/3</div>
+      </div>
+    </div>
+
+    <div class="day-card">
+      <div><div class="day-num">Dia 15</div></div>
+      <div>
+        <p class="day-title">Tempo, clima e datas</p>
+        <p class="day-body">Che tempo fa?, Fa caldo/freddo, Piove, I giorni della settimana, I mesi. Útil para planear atividades e perceber previsões meteorológicas.</p>
+      </div>
+    </div>
+    <div class="day-card">
+      <div><div class="day-num">Dia 16</div></div>
+      <div>
+        <p class="day-title">Elogios e conversa social</p>
+        <p class="day-body">Che bella città!, Il cibo è delizioso!, Mi piace molto, Com'è bello!, Sei molto gentile. Pratica com entusiasmo — os italianos adoram expressividade.</p>
+      </div>
+    </div>
+    <div class="day-card">
+      <div><div class="day-num">Dia 17</div></div>
+      <div>
+        <p class="day-title">Contar uma história simples</p>
+        <p class="day-body">Ieri sono andato/a a…, Ho visto…, Ho mangiato…, È stato fantastico! Pratica descrever o dia anterior usando passato prossimo no básico.</p>
+      </div>
+    </div>
+    <div class="day-card">
+      <div><div class="day-num">Dia 18</div></div>
+      <div>
+        <p class="day-title">Fazer perguntas e entender respostas</p>
+        <p class="day-body">Chi?, Cosa?, Dove?, Quando?, Come?, Perché?, Può ripetere più lentamente? Non capisco. Estratégias para quando não percebes algo.</p>
+      </div>
+    </div>
+    <div class="day-card">
+      <div><div class="day-num">Dia 19</div></div>
+      <div>
+        <p class="day-title">Gastronomia italiana avançada</p>
+        <p class="day-body">Nomes de pratos, ingredientes, como pedir personalizações. Quero explorar além da pizza e pasta — antipasto, risotto, fritto misto, dolci.</p>
+      </div>
+    </div>
+    <div class="day-card">
+      <div><div class="day-num">Dia 20</div></div>
+      <div>
+        <p class="day-title">Simulação de viagem completa</p>
+        <p class="day-body">Role-play de 15 min: desde o aeroporto até ao check-in, jantar e museu. Encena cada situação sem parar — é o teu "exame final".</p>
+      </div>
+    </div>
+    <div class="day-card">
+      <div><div class="day-num">Dia 21</div></div>
+      <div>
+        <p class="day-title">Revisão geral + lista de bolso</p>
+        <p class="day-body">Revê as frases que ainda sentes menos confiantes. Cria uma lista de 20 frases essenciais no telemóvel para consulta rápida durante a viagem. <span class="pill pill-amber">Marco final</span></p>
+      </div>
+    </div>
+    <div class="tip-box"><i class="ti ti-device-mobile" aria-hidden="true" style="margin-right:6px;"></i><strong>Dica da semana:</strong> Muda o idioma de uma app que usas todos os dias para italiano — redes sociais, notícias ou podcast — para imersão passiva constante.</div>
+  </div>
+
+  <div id="w3" style="display:none">
+    <p style="font-size:13px; color:var(--color-text-secondary); margin-bottom:14px;">As frases mais úteis para levar na mala — organizadas por situação.</p>
+
+    <div class="section-head">Saudações e cortesia</div>
+    <div class="phrase-row"><span class="phrase-it">Buongiorno / Buonasera</span><span class="phrase-pt">Bom dia / Boa tarde</span></div>
+    <div class="phrase-row"><span class="phrase-it">Per favore / Grazie / Prego</span><span class="phrase-pt">Por favor / Obrigado / De nada</span></div>
+    <div class="phrase-row"><span class="phrase-it">Mi scusi / Scusa</span><span class="phrase-pt">Com licença / Desculpe</span></div>
+    <div class="phrase-row"><span class="phrase-it">Non capisco, può ripetere?</span><span class="phrase-pt">Não percebo, pode repetir?</span></div>
+
+    <div class="section-head">Café e restaurante</div>
+    <div class="phrase-row"><span class="phrase-it">Un tavolo per due, per favore</span><span class="phrase-pt">Uma mesa para dois, por favor</span></div>
+    <div class="phrase-row"><span class="phrase-it">Vorrei un caffè / un'acqua</span><span class="phrase-pt">Queria um café / uma água</span></div>
+    <div class="phrase-row"><span class="phrase-it">Il conto, per favore</span><span class="phrase-pt">A conta, por favor</span></div>
+    <div class="phrase-row"><span class="phrase-it">È delizioso!</span><span class="phrase-pt">Está delicioso!</span></div>
+
+    <div class="section-head">Direções e transportes</div>
+    <div class="phrase-row"><span class="phrase-it">Dov'è…? / Come arrivo a…?</span><span class="phrase-pt">Onde é…? / Como chego a…?</span></div>
+    <div class="phrase-row"><span class="phrase-it">A destra / A sinistra / Dritto</span><span class="phrase-pt">À direita / À esquerda / Em frente</span></div>
+    <div class="phrase-row"><span class="phrase-it">Un biglietto per… per favore</span><span class="phrase-pt">Um bilhete para… por favor</span></div>
+
+    <div class="section-head">Urgências</div>
+    <div class="phrase-row"><span class="phrase-it">Aiuto! Ho bisogno di aiuto!</span><span class="phrase-pt">Socorro! Preciso de ajuda!</span></div>
+    <div class="phrase-row"><span class="phrase-it">Chiamate un medico!</span><span class="phrase-pt">Chamem um médico!</span></div>
+    <div class="phrase-row"><span class="phrase-it">Dov'è la farmacia?</span><span class="phrase-pt">Onde é a farmácia?</span></div>
+
+    <div style="margin-top:18px;">
+      <button onclick="sendPrompt('Cria um quiz interativo com as 20 frases essenciais de italiano para eu testar os meus conhecimentos')" style="font-size:13px; padding:8px 16px;">Testar o meu italiano com um quiz ↗</button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function show(i){
+  ['w0','w1','w2','w3'].forEach((id,j)=>{
+    document.getElementById(id).style.display = j===i?'block':'none';
+  });
+  document.querySelectorAll('.week-tab').forEach((t,j)=>{
+    t.classList.toggle('active', j===i);
+  });
+}
+</script>
